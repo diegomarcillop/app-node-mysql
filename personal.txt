@@ -1,3 +1,5 @@
  mkdir config helpers models public routes views // crear todas las carpetas necesarias
 
 nodemon // modulo para tener en estado desarrollo el servidor
+
+path // unir directorios 
