@@ -1,6 +1,7 @@
 const router = require('express').Router();
-
-router.get('/links', (req, res)=>{
-     res.send('Notes from database');
+const db = require('../conexion');
+router.get('/add',(req,res)=>{
+     res.render('links/add')
 });
+
 module.exports = router;

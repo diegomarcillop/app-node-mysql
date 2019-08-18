@@ -7,9 +7,9 @@ const morgan = require('morgan');
 
 // ini
 const app = express();
-require('./database');
+require('././conexion');
 //Settings
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 5500);
 app.set('views', path.join(__dirname,'views'));
 app.engine('.hbs',exphbs(
      {
