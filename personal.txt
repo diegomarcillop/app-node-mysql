@@ -5,3 +5,5 @@ nodemon // modulo para tener en estado desarrollo el servidor
 path // unir directorios 
 
 Profudizar sobre: express-handlebars
+
+timeago.js -> convertir un timestamp en una fecha legible
