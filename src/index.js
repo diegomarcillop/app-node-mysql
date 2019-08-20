@@ -4,7 +4,9 @@ const exphbs = require('express-handlebars');
 const methodOverride = require ('method-override');
 const session = require('express-session');
 const morgan = require('morgan');
-
+const flash = require ('connect-flash') 
+const MySQLStore = require('express-mysql-session');
+const { database } = require('./keys');
 // ini
 const app = express();
 require('././conexion');
@@ -25,18 +27,22 @@ app.engine('.hbs',exphbs(
 app.set('view engine','hbs');
 
 //Middlewares
+app.use(session({
+     secret:'mysecretapp',
+     resave: false,
+     saveUninitialized: false,
+     store: new MySQLStore(database) 
+}));
+app.use(flash()); 
 app.use(morgan('dev'))
 app.use(express.urlencoded({extended: false}))
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(session({
-     secret:'mysecretapp',
-     resave: true,
-     saveUninitialized: true
-}));
+
 
 //Global Variables
 app.use((req,res,next)=>{
+     app.locals.agregado = req.flash('agregado');
      next();
 }); 
 

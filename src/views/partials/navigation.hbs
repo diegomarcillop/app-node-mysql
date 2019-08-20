@@ -1,14 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Links</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ <div class="container">
+    <a class="navbar-brand" href="/links/">Enlaces favoritos</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Features</a>
-      <a class="nav-item nav-link" href="#">Pricing</a>
-      <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    <div class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Enlaces
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/links/add">Add</a>
+          <a class="dropdown-item" href="/links/">Listar</a>
+        </div>
+      </li>
     </div>
   </div>
+ </div>
 </nav>

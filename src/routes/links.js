@@ -12,6 +12,7 @@ router.get('/', async (req, res)=>{
 router.get('/delete/:idLink', async (req, res) => {
      const { idLink } = req.params;
      await db.query('DELETE FROM links WHERE idLink = ?', [idLink]);
+     req.flash('agregado','Eliminado correctamente!!')
      res.redirect('/links');
 });
 
@@ -30,6 +31,7 @@ router.post('/add', async (req,res)=>{
           descripLink
      };
      await db.query('INSERT INTO links set ?',[mylink]); 
+     req.flash('agregado','Enlace guardado exitosamente!!')
      res.redirect('/links')
 });
 
@@ -42,6 +44,8 @@ router.post('/edit/:idLink', async (req, res)=>{
           url
      }
      await db.query('UPDATE links set ? WHERE idLink = ?', [link, idLink])
+     req.flash('agregado','Actualizado correctamente!!')
+
      res.redirect('/links')
 });
 
